@@ -1,6 +1,7 @@
 <template>
     <div>
-        {{name}}
+        {{name|toString}}
+      {{'2010-01-02'|toDateStr('YYYY-DD-MM')}}
     </div>
 </template>
 
@@ -19,8 +20,7 @@ export default {
     //   _this.name = res.name
     // })
     axios.jsonp(`/users/jsonp?callback=callBack`).then(res=>{
-      _this.name = res.name
-      console.dir(res)
+      _this.name = res
     })
   }
 }

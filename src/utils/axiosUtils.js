@@ -26,7 +26,7 @@ axios.jsonp = (url) => {
     }
     let scriptEle = document.createElement('script')
     scriptEle.crossOrigin = true
-    scriptEle.src = url
+    scriptEle.src = baseUrl + url
     scriptEle.addEventListener('load', () => {
       document.body.removeChild(scriptEle)
       window.callBack = null
