@@ -1,54 +1,40 @@
 <template>
-  <el-menu :default-openeds="['1', '3']">
+  <el-menu :default-openeds="['1']" @select="openNav">
     <el-submenu index="1">
-      <template slot="title"><i class="el-icon-message"></i>导航一</template>
+      <template slot="title"><i class="el-icon-message"></i>示例</template>
       <el-menu-item-group>
-        <template slot="title">分组一</template>
-        <el-menu-item index="1-1">选项1</el-menu-item>
-        <el-menu-item index="1-2">选项2</el-menu-item>
+<!--        <template slot="title">按钮</template>-->
+        <el-menu-item index="buttons">按钮</el-menu-item>
+        <el-menu-item index="1-2">弹框</el-menu-item>
       </el-menu-item-group>
-      <el-menu-item-group title="分组2">
-        <el-menu-item index="1-3">选项3</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="1-4">
-        <template slot="title">选项4</template>
-        <el-menu-item index="1-4-1">选项4-1</el-menu-item>
-      </el-submenu>
     </el-submenu>
     <el-submenu index="2">
-      <template slot="title"><i class="el-icon-menu"></i>导航二</template>
+      <template slot="title"><i class="el-icon-menu"></i>图表</template>
       <el-menu-item-group>
-        <template slot="title">分组一</template>
-        <el-menu-item index="2-1">选项1</el-menu-item>
-        <el-menu-item index="2-2">选项2</el-menu-item>
+        <el-menu-item index="2-1">antv</el-menu-item>
+        <el-menu-item index="2-2">echarts</el-menu-item>
+        <el-menu-item index="2-3">highcharts</el-menu-item>
       </el-menu-item-group>
-      <el-menu-item-group title="分组2">
-        <el-menu-item index="2-3">选项3</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="2-4">
-        <template slot="title">选项4</template>
-        <el-menu-item index="2-4-1">选项4-1</el-menu-item>
-      </el-submenu>
     </el-submenu>
     <el-submenu index="3">
-      <template slot="title"><i class="el-icon-setting"></i>导航三</template>
+      <template slot="title"><i class="el-icon-setting"></i>地图</template>
       <el-menu-item-group>
-        <template slot="title">分组一</template>
-        <el-menu-item index="3-1">选项1</el-menu-item>
-        <el-menu-item index="3-2">选项2</el-menu-item>
+<!--        <template slot="title">百度地图</template>-->
+        <el-menu-item index="3-1">高德地图</el-menu-item>
+        <el-menu-item index="3-2">腾讯地图</el-menu-item>
+        <el-menu-item index="3-3">百度地图</el-menu-item>
       </el-menu-item-group>
-      <el-menu-item-group title="分组2">
-        <el-menu-item index="3-3">选项3</el-menu-item>
-      </el-menu-item-group>
-      <el-submenu index="3-4">
-        <template slot="title">选项4</template>
-        <el-menu-item index="3-4-1">选项4-1</el-menu-item>
-      </el-submenu>
     </el-submenu>
   </el-menu>
 </template>
 <script>
-    export default {
-      name:'Nav'
+export default {
+  name: 'Nav',
+  methods: {
+    openNav (key, keyPath) {
+      this.$router.push(`/demos/${key}`)
     }
+  }
+
+}
 </script>
