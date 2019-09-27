@@ -14,8 +14,12 @@ export default new Router({
           component: () => import('../pages/dashboard/Dashboard')
         },
         {
-          path: '/demos/buttons',
-          component: () => import('../pages/button/DetaultButton')
+          path: '/demos/component',
+          component: () => import('../pages/api/ComponentRequest')
+        },
+        {
+          path: '/demos/store',
+          component: () => import('../pages/api/StoreRequest')
         },
         {
           path: '*',

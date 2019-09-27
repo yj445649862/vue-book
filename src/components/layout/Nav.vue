@@ -4,8 +4,8 @@
       <template slot="title"><i class="el-icon-message"></i>示例</template>
       <el-menu-item-group>
 <!--        <template slot="title">按钮</template>-->
-        <el-menu-item index="buttons">按钮</el-menu-item>
-        <el-menu-item index="1-2">弹框</el-menu-item>
+        <el-menu-item index="component">组件内调用接口</el-menu-item>
+        <el-menu-item index="store">store内调用口</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-submenu index="2">

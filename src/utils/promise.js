@@ -1,4 +1,4 @@
-import axios from 'axios'
+import axios from './axiosUtils'
 import {translate} from './utils'
 
 export function promiseGet (url, params) {

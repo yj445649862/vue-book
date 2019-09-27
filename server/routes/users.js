@@ -1,15 +1,24 @@
 var express = require('express')
 var router = express.Router()
 
-/* GET users listing. */
-router.get('/', function (req, res, next) {
-  res.json({name: 222})
+let userList = [
+  {id: 1, name: 'one'},
+  {id: 2, name: 'two'},
+  {id: 123, name: '123'}
+]
+router.get('/all', (req, res, next) => {
+  res.json(userList)
 })
-router.get('/jsonp', (req, res, next) => {
-  var response = [{name: 3333}]
-  setTimeout(()=>{
-    res.end("callBack" + '(' + JSON.stringify(response) + ')')
-  },3000)
+
+router.get('/:id', (req, res, next) => {
+  res.json(userList.filter(({id}) => id == req.params.id))
+})
+router.post('/:id', (req, res, next) => {
+  userList.find(({id}) => id == req.params.id)['name'] = req.body.name
+  res.json(userList)
+})
+router.delete('/:id', (req, res, next) => {
+  res.json(userList.filter(({id})=>id!=req.params.id))
 })
 
 module.exports = router

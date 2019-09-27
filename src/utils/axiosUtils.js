@@ -20,13 +20,13 @@ axios.interceptors.response.use(response => {
   return Promise.reject(error.response.data)
 })
 axios.jsonp = (url) => {
-  return new Promise((resolve, reject) => {
+  return new Promise((resolve) => {
     window.callBack = (e) => {
       resolve(e)
     }
     let scriptEle = document.createElement('script')
     scriptEle.crossOrigin = true
-    scriptEle.src = baseUrl + url
+    scriptEle.src = `${baseUrl}${url}`
     scriptEle.addEventListener('load', () => {
       document.body.removeChild(scriptEle)
       window.callBack = null
