@@ -11,7 +11,10 @@ router.get('/auth', (req, res, next) => {
    * key: 对应不同的页面标记，value数组对应相应页面中的某些资源权限
    */
   res.json({
-    asdfa:['getAll','delete']
+    requestInStore:{
+      getAll:true,
+      delete:true
+    }
   })
 })
 

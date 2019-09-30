@@ -2,7 +2,7 @@ import api from '../../apis/UserApi'
 let state = {
   userList: [],
   userAuth: {
-    requestInStore: ['getAll', 'delete']
+    demo: ['getAll', 'delete']
   }
 }
 let getters = {

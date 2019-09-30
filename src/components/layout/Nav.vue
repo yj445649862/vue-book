@@ -4,7 +4,7 @@
       <template slot="title"><i class="el-icon-message"></i>示例</template>
       <el-menu-item-group>
         <el-menu-item index="component">组件内调用接口</el-menu-item>
-        <el-menu-item index="store" v-pPage="'requestInStore'">store内调用口</el-menu-item>
+        <el-menu-item index="store" v-if="auth('requestInStore')">store内调用口</el-menu-item>
       </el-menu-item-group>
     </el-submenu>
     <el-submenu index="2">
