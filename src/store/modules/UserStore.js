@@ -1,16 +1,31 @@
 import api from '../../apis/UserApi'
 let state = {
-  userList: []
+  userList: [],
+  userAuth: {
+    requestInStore: ['getAll', 'delete']
+  }
 }
 let getters = {
-  userList: state => state.userList
+  userList: state => state.userList,
+  userAuth: state => state.userAuth
 }
 let mutations = {
   setUserList (state, data) {
     state.userList = data
+  },
+  setUserAuth (state, data) {
+    state.userAuth = data
   }
 }
 let actions = {
+
+  queryUserAuth ({commit, dispatch}, data) {
+    api.getUserAuth(data)
+      .then(res => {
+        commit('setUserAuth', res)
+      })
+      .catch()
+  },
   queryAllUser ({commit, state, dispatch}) {
     api.getAllUser()
       .then(res => {

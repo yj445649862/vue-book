@@ -6,9 +6,12 @@ import router from './router'
 import ElementUI from 'element-ui';
 import store from './store'
 import '@/utils/filter';
+import directive from './plugins/plugins'
 import 'normalize.css'
 import 'element-ui/lib/theme-chalk/index.css';
+import './components/minx'
 Vue.config.productionTip = false
+Vue.directive(directive)
 Vue.use(ElementUI);
 /* eslint-disable no-new */
 new Vue({

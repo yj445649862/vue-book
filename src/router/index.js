@@ -22,6 +22,10 @@ export default new Router({
           component: () => import('../pages/api/StoreRequest')
         },
         {
+          path: '/demos/auth',
+          component: () => import('../pages/auth/AccessControl')
+        },
+        {
           path: '*',
           component: () => import('../pages/error/Lost')
         }
